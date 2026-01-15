@@ -48,6 +48,7 @@ required:
   - requirement
   - architecture
   - mindmap
+  - ishikawa
   - kanban
   - gitGraph
   - c4
@@ -301,6 +302,8 @@ properties:
     $ref: '#/$defs/ArchitectureDiagramConfig'
   mindmap:
     $ref: '#/$defs/MindmapDiagramConfig'
+  ishikawa:
+    $ref: '#/$defs/IshikawaDiagramConfig'
   kanban:
     $ref: '#/$defs/KanbanDiagramConfig'
   gitGraph:
@@ -994,6 +997,36 @@ $defs: # JSON Schema definition (maybe we should move these to a separate file)
         description: Layout algorithm to use for positioning mindmap nodes
         type: string
         default: 'cose-bilkent'
+
+  IshikawaDiagramConfig:
+    title: Ishikawa Diagram Config
+    allOf: [{ $ref: '#/$defs/BaseDiagramConfig' }]
+    description: The object containing configurations specific for ishikawa diagrams
+    type: object
+    unevaluatedProperties: false
+    required:
+      - useMaxWidth
+      - angleDeg
+      - minGap
+      - categorySpacing
+      - maxLabelWidth
+      - fontSize
+    properties:
+      angleDeg:
+        type: number
+        default: 35
+      minGap:
+        type: number
+        default: 12
+      categorySpacing:
+        type: number
+        default: 120
+      maxLabelWidth:
+        type: number
+        default: 160
+      fontSize:
+        type: number
+        default: 14
 
   KanbanDiagramConfig:
     title: Kanban Diagram Config

@@ -210,6 +210,7 @@ export interface MermaidConfig {
   requirement?: RequirementDiagramConfig;
   architecture?: ArchitectureDiagramConfig;
   mindmap?: MindmapDiagramConfig;
+  ishikawa?: IshikawaDiagramConfig;
   kanban?: KanbanDiagramConfig;
   gitGraph?: GitGraphDiagramConfig;
   c4?: C4DiagramConfig;
@@ -1091,6 +1092,19 @@ export interface MindmapDiagramConfig extends BaseDiagramConfig {
    * Layout algorithm to use for positioning mindmap nodes
    */
   layoutAlgorithm?: string;
+}
+/**
+ * The object containing configurations specific for ishikawa diagrams
+ *
+ * This interface was referenced by `MermaidConfig`'s JSON-Schema
+ * via the `definition` "IshikawaDiagramConfig".
+ */
+export interface IshikawaDiagramConfig extends BaseDiagramConfig {
+  angleDeg?: number;
+  minGap?: number;
+  categorySpacing?: number;
+  maxLabelWidth?: number;
+  fontSize?: number;
 }
 /**
  * The object containing configurations specific for kanban diagrams

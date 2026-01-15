@@ -27,6 +27,7 @@ import state from './diagrams/state/styles.js';
 import journey from './diagrams/user-journey/styles.js';
 import timeline from './diagrams/timeline/styles.js';
 import mindmap from './diagrams/mindmap/styles.js';
+import ishikawa from './diagrams/ishikawa/styles.js';
 import packet from './diagrams/packet/styles.js';
 import block from './diagrams/block/styles.js';
 import radar from './diagrams/radar/styles.js';
@@ -93,6 +94,7 @@ describe('styles', () => {
         git,
         journey,
         mindmap,
+        ishikawa,
         pie,
         requirement,
         sequence,
